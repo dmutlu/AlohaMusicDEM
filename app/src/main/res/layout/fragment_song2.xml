@@ -1,13 +1,17 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="edu.umbc.dmutlu1.alohamusicdem.Song2Fragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:orientation="vertical"
+              tools:context="edu.umbc.dmutlu1.alohamusicdem.Song1Fragment" android:weightSum="1"
+              android:gravity="center">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
-
-</FrameLayout>
+    <ImageView
+            android:layout_width="280dp"
+            app:srcCompat="@drawable/drums" android:id="@+id/imageDrums" android:layout_height="276dp"
+            android:layout_weight="0.04" android:layout_gravity="center"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_media_play"
+            android:id="@+id/mediaCtrl2" android:layout_weight="0.04" android:backgroundTint="@color/colorPrimaryDark"
+            android:elevation="5dp"/>
+</LinearLayout>
