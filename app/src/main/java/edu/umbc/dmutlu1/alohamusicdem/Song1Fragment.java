@@ -1,15 +1,20 @@
 package edu.umbc.dmutlu1.alohamusicdem;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 
-public class Song1Fragment extends Fragment
+public class Song1Fragment extends Fragment implements View.OnClickListener
 {
+    View view;
+    ImageButton mediaBtn;
+    MediaPlayer mediaPlayer;
 
     public Song1Fragment()
     {
@@ -20,8 +25,31 @@ public class Song1Fragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
+        view = inflater.inflate(R.layout.fragment_song1, container, false);
+
+        mediaBtn = view.findViewById(R.id.mediaCtrl1);
+        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.ukulele);
+        mediaBtn.setOnClickListener(this);
+
+        mediaPlayer.start();
+        mediaBtn.setImageResource(android.R.drawable.ic_media_pause);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_song1, container, false);
+        return view;
+    }
+
+    public void onClick(View v)
+    {
+        if (mediaPlayer.isPlaying())
+        {
+            mediaPlayer.pause();
+            mediaBtn.setImageResource(android.R.drawable.ic_media_play);
+        }
+        else {
+            mediaPlayer.start();
+            mediaBtn.setImageResource(android.R.drawable.ic_media_pause);
+        }
+
     }
 
     /**
