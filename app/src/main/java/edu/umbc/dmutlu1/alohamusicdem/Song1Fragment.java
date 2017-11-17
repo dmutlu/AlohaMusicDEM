@@ -12,9 +12,8 @@ import android.widget.ImageButton;
 
 public class Song1Fragment extends Fragment implements View.OnClickListener
 {
-    View view;
-    ImageButton mediaBtn;
-    MediaPlayer mediaPlayer;
+    private ImageButton mediaBtn;
+    private static MediaPlayer mediaPlayer;
 
     public Song1Fragment()
     {
@@ -25,14 +24,12 @@ public class Song1Fragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        view = inflater.inflate(R.layout.fragment_song1, container, false);
+        View view = inflater.inflate(R.layout.fragment_song1, container, false);
 
         mediaBtn = view.findViewById(R.id.mediaCtrl1);
         mediaPlayer = MediaPlayer.create(getActivity(), R.raw.ukulele);
+        mediaPlayer.setLooping(true);
         mediaBtn.setOnClickListener(this);
-
-        mediaPlayer.start();
-        mediaBtn.setImageResource(android.R.drawable.ic_media_pause);
 
         // Inflate the layout for this fragment
         return view;
@@ -49,7 +46,6 @@ public class Song1Fragment extends Fragment implements View.OnClickListener
             mediaPlayer.start();
             mediaBtn.setImageResource(android.R.drawable.ic_media_pause);
         }
-
     }
 
     /**
