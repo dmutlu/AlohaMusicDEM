@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Aloha Music DEM</string>
     <string name="sounds_of_hawaii">Sounds of Hawaii</string>
+    <string name="song_one">Song One</string>
+    <string name="song_two">Song Two</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
